@@ -25,15 +25,15 @@ module.exports = {
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
             {
                 test: /\.css$/,
-                use: [ 
+                use: [
                     { loader: "style-loader" },  // to inject the result into the DOM as a style block
-                    { loader: "css-loader", options: { modules: false, sourceMap: true } },  // to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
+                    { loader: "css-loader", options: { modules: true, sourceMap: true } },  // to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
                 ]
             },
             {
                 test: /\.scss$/, use: [ 
                     { loader: "style-loader" },  // to inject the result into the DOM as a style block
-                    { loader: "css-loader", options: { modules: false, sourceMap: true } },  // to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
+                    { loader: "css-loader", options: { modules: true, sourceMap: true } },  // to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
                     { loader: "sass-loader", options: { sourceMap: true } },  // to convert SASS to CSS
                 ]
             }
